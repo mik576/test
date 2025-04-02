@@ -1,0 +1,333 @@
+﻿body {
+    font-family: Tahoma, sans-serif;
+}
+:root {
+    --green-banana: #B5E61D;
+}
+
+.text-green-banana {
+    color: var(--green-banana);
+}
+
+/* Định dạng tổng thể */
+.carousel {
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Ảnh trong carousel */
+.carousel-inner img {
+    height: 500px;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Nút điều hướng */
+.carousel-control-prev, .carousel-control-next {
+    width: 5%;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Hiển thị nút khi hover */
+.carousel:hover .carousel-control-prev,
+.carousel:hover .carousel-control-next {
+    opacity: 1;
+}
+
+/* Bo tròn và tạo màu nền cho nút */
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: #B4D800; /* Xanh chuối */
+    border-radius: 50%;
+    padding: 12px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Hiệu ứng khi hover */
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon {
+    background-color: #ffbf00; /* Màu xanh đậm hơn */
+    transform: scale(1.1); /* Hiệu ứng phóng to nhẹ */
+}
+
+.menu-fin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    margin: 20px auto;
+}
+
+    .menu-fin .header {
+        margin-bottom: 15px;
+    }
+
+    .menu-fin h1 {
+        font-size: 24px;
+        font-weight: bold;
+        color: #000;
+    }
+
+    .menu-fin .description {
+        font-size: 16px;
+        color: #666;
+    }
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 50px;
+    padding: 8px 15px;
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    box-shadow: 0px 4px 10px rgba(3,18,26,0.15);
+}
+
+.input-container {
+    position: relative;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 8px 15px;
+    border-radius: 50px;
+    background: #fff;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    margin: 0 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+    .input-container:hover {
+        border-color: #7ac142;
+    }
+
+    .input-container i {
+        margin-right: 8px;
+        color: #7ac142;
+        font-size: 18px;
+    }
+
+    .input-container input[type="text"] {
+        flex: 1;
+        border: none;
+        outline: none;
+        padding: 10px;
+        font-size: 14px;
+        width: 100%;
+        background: transparent;
+    }
+
+.city-list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 10px 0;
+    z-index: 100;
+    list-style: none;
+}
+
+    .city-list li {
+        padding: 10px 15px;
+        cursor: pointer;
+        transition: background 0.3s ease-in-out;
+    }
+
+        .city-list li:hover {
+            background: #7ac142;
+            color: white;
+        }
+
+.guest-room-popup {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    width: 280px;
+    z-index: 100;
+}
+
+.counter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+}
+
+    .counter button {
+        width: 32px;
+        height: 32px;
+        border: none;
+        background: #ddd;
+        cursor: pointer;
+        border-radius: 6px;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+.apply-btn {
+    width: 100%;
+    background: #7ac142;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+}
+
+    .apply-btn:hover {
+        background: #5e9b31;
+    }
+
+.search-button {
+    background: #7ac142;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .search-button:hover {
+        background: #ffbf00;
+    }
+
+@media (max-width: 768px) {
+    .menu-fin {
+        padding: 15px;
+        max-width: 100%;
+        margin: 10px auto;
+    }
+
+    .search-bar {
+        flex-direction: column;
+        padding: 10px;
+        width: 95%;
+    }
+
+    .search-container {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+        .search-container input {
+            font-size: 14px;
+            padding: 8px;
+        }
+
+    .search-button {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    .guest-room-popup {
+        width: 90%;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+/*main1*/
+.section-title {
+    font-size: 24px;
+    color: #CC6B2D;
+}
+
+.section-subtitle {
+    color: #555;
+}
+
+.card {
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    min-height: 100%; /* Giúp tất cả thẻ card có cùng chiều cao */
+    display: flex;
+    flex-direction: column;
+}
+
+    .card:hover {
+        transform: translateY(-5px);
+    }
+
+.card-img-top {
+    height: 180px;
+    object-fit: cover;
+}
+
+.deal-tag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.deal-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Giúp phần nội dung mở rộng để đẩy giá xuống dưới */
+}
+
+    .deal-info ul {
+        padding-left: 15px;
+    }
+
+.deal-price {
+    font-size: 18px;
+    margin-top: auto; /* Đẩy giá xuống dưới */
+}
+
+.deal-sold {
+    margin-bottom: 10px;
+}
+.tiencich {
+    color: #3a6e00; /* Màu xanh chuối */
+
+}
+
+    .tiencich li {
+        margin-bottom: 5px; /* Khoảng cách giữa các mục */
+    }
+/*menu2*/
+
+.highlighted-deals2 {
+    background-color: #F9F9F9; /* Màu nền nhạt */
+    padding: 50px 0; /* Khoảng cách trên dưới */
+    border-radius: 10px; /* Bo góc */
+}
+.highlighted-deals3 {
+    background-color: #ffffff; /* Màu nền nhạt */
+    padding: 50px 0; /* Khoảng cách trên dưới */
+    border-radius: 10px; /* Bo góc */
+}
+.highlighted-deals4 {
+    background-color: #F9F9F9; /* Màu nền nhạt */
+    padding: 50px 0; /* Khoảng cách trên dưới */
+    border-radius: 10px; /* Bo góc */
+}
+.highlighted-deals5 {
+    background-color: #ffffff; /* Màu nền nhạt */
+    padding: 50px 0; /* Khoảng cách trên dưới */
+    border-radius: 10px; /* Bo góc */
+}

@@ -1,0 +1,1248 @@
+﻿body {
+    font-family: Tahoma, sans-serif;
+}
+    
+
+/* Định dạng tổng thể */
+    .carousel {
+        max-width: 100%;
+        margin: auto;
+        overflow: hidden;
+    }
+
+    /* Ảnh trong carousel */
+    .carousel-inner img {
+        height: 500px;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    /* Nút điều hướng */
+    .carousel-control-prev, .carousel-control-next {
+        width: 5%;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    /* Hiển thị nút khi hover */
+    .carousel:hover .carousel-control-prev,
+    .carousel:hover .carousel-control-next {
+        opacity: 1;
+    }
+
+    /* Bo tròn và tạo màu nền cho nút */
+    .carousel-control-prev-icon, .carousel-control-next-icon {
+        background-color: #B4D800; /* Xanh chuối */
+        border-radius: 50%;
+        padding: 12px;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+
+    /* Hiệu ứng khi hover */
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon {
+    background-color: #ffbf00; /* Màu xanh đậm hơn */
+    transform: scale(1.1); /* Hiệu ứng phóng to nhẹ */
+}
+
+    .menu-fin {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: white;
+        margin: 20px auto;
+    }
+
+        .menu-fin .header {
+            margin-bottom: 15px;
+        }
+
+        .menu-fin h1 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #000;
+        }
+
+        .menu-fin .description {
+            font-size: 16px;
+            color: #666;
+        }
+
+    .search-bar {
+        display: flex;
+        align-items: center;
+        background: #fff;
+        border-radius: 50px;
+        padding: 8px 15px;
+        width: 90%;
+        max-width: 1200px;
+        margin: auto;
+        box-shadow: 0px 4px 10px rgba(3,18,26,0.15);
+    }
+
+    .input-container {
+        position: relative;
+        flex: 1;
+        display: flex;
+        align-items: center;
+        padding: 8px 15px;
+        border-radius: 50px;
+        background: #fff;
+        cursor: pointer;
+        border: 1px solid #ddd;
+        margin: 0 5px;
+        transition: all 0.3s ease-in-out;
+    }
+
+        .input-container:hover {
+            border-color: #7ac142;
+        }
+
+        .input-container i {
+            margin-right: 8px;
+            color: #7ac142;
+            font-size: 18px;
+        }
+
+        .input-container input[type="text"] {
+            flex: 1;
+            border: none;
+            outline: none;
+            padding: 10px;
+            font-size: 14px;
+            width: 100%;
+            background: transparent;
+        }
+
+    .city-list {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        padding: 10px 0;
+        z-index: 100;
+        list-style: none;
+    }
+
+        .city-list li {
+            padding: 10px 15px;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out;
+        }
+
+            .city-list li:hover {
+                background: #7ac142;
+                color: white;
+            }
+
+    .guest-room-popup {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        padding: 15px;
+        width: 280px;
+        z-index: 100;
+    }
+
+    .counter {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 0;
+    }
+
+        .counter button {
+            width: 32px;
+            height: 32px;
+            border: none;
+            background: #ddd;
+            cursor: pointer;
+            border-radius: 6px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+    .apply-btn {
+        width: 100%;
+        background: #7ac142;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+        .apply-btn:hover {
+            background: #5e9b31;
+        }
+
+    .search-button {
+        background: #7ac142;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 50px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+        .search-button:hover {
+            background: #ffbf00;
+        }
+
+    @media (max-width: 768px) {
+        .menu-fin {
+            padding: 15px;
+            max-width: 100%;
+            margin: 10px auto;
+        }
+
+        .search-bar {
+            flex-direction: column;
+            padding: 10px;
+            width: 95%;
+        }
+
+        .search-container {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+            .search-container input {
+                font-size: 14px;
+                padding: 8px;
+            }
+
+        .search-button {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+        }
+
+        .guest-room-popup {
+            width: 90%;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+.image-quangcao {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Khoảng cách giữa 2 ảnh */
+    padding: 20px;
+    max-width: 100%;
+}
+
+        .image-quangcao img {
+            max-width: 36%; /* Để 2 ảnh nằm cạnh nhau */
+            border-radius: 10px; /* Bo góc nhẹ */
+            object-fit: cover;
+            transition: transform 0.3s ease-in-out;
+        }
+
+            .image-quangcao img:hover {
+                transform: scale(1.05); /* Hiệu ứng zoom khi hover */
+            }
+
+    @media (max-width: 768px) {
+        .image-quangcao {
+            flex-direction: column;
+            align-items: center;
+        }
+
+            .image-quangcao img {
+                width: 90%;
+            }
+    }
+
+    /**/
+/* ------- KHU VỰC CHÍNH ------- */
+.top-section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px;
+    width: 100%;
+
+}
+
+/* ------- MENU BÊN TRÁI ------- */
+.menu-container {
+    background-color: white;
+    padding: 12px;
+    border-radius: 6px;
+}
+
+/* ------- SIDEBAR NHỎ ------- */
+.sidebar {
+    width: 19%;
+    min-width: 250px; /* Đặt giới hạn nhỏ nhất để không bị thu nhỏ quá mức */
+    max-width: 300px; /* Đặt giới hạn lớn nhất nếu cần */
+    background-color: white;
+    padding: 12px;
+    border-left: 4px solid #9E9E9E;
+    border-radius: 6px;
+}
+
+
+/* ------- MENU BUTTON ------- */
+
+.menu2, .menu3 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+    position: relative; /* Để căn chỉnh gạch ngang */
+    padding-bottom: 10px; /* Khoảng cách giữa menu và gạch */
+}
+
+    .menu2::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 2px; /* Độ dày gạch */
+        background-color: #DFA974 ; /* Màu xanh chuối */
+
+    }
+
+
+.menu2, .menu3 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+
+.menu2-btn, .menu3-btn {
+    padding: 10px 14px;
+    font-size: 14px;
+    background-color: #3a6e00;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 2px 5px rgba(164, 205, 57, 0.3);
+
+}
+
+    .menu2-btn:hover, .menu3-btn:hover {
+        background-color: #DFA974; /* Màu xanh đậm hơn */
+        box-shadow: 0 3px 7px rgba(133, 180, 42, 0.5);
+    }
+
+    .menu2-btn.active, .menu3-btn.active {
+        background-color: #DFA974; /* Màu xanh sẫm hơn */
+    }
+
+/* ------- TIÊU ĐỀ DANH MỤC ------- */
+.section-title, .sidebar-title {
+    background: linear-gradient(135deg, #3a6e00, #85B42A);
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+/* ------- DANH SÁCH TOUR ------- */
+.tour-list {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+
+}
+
+/* ------- TOUR ITEM ------- */
+.tour-item {
+    width: 230px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    background: white;
+
+    border-radius: 6px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Đảm bảo nút nằm ở dưới cùng */
+
+}
+
+    .tour-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .tour-item img {
+        width: 100%;
+        border-radius: 6px;
+    }
+
+/* ------- SALE BADGE ------- */
+.sale-badge {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background: #FF3D00;
+    color: white;
+    font-weight: bold;
+    padding: 4px 7px;
+    font-size: 12px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(255, 61, 0, 0.3);
+}
+
+/* ------- GIÁ SẢN PHẨM ------- */
+.price {
+    font-weight: bold;
+    color: #d32f2f;
+    font-size: 15px;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: gray;
+    font-size: 13px;
+}
+
+/* ------- NÚT ĐẶT TOUR ------- */
+.book-btn {
+    display: block;
+    width: 85%;
+    margin: 12px auto;
+    padding: 12px;
+    text-align: center;
+    background: #3a6e00;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    transition: 0.3s;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(164, 205, 57, 0.4);
+}
+
+    .book-btn:hover {
+        background: #DFA974;
+        transform: scale(1.05);
+    }
+
+    .book-btn:active {
+        transform: scale(0.95);
+    }
+
+/* ------- COMBO ITEM ------- */
+.combo-item {
+    position: relative;
+    background: white;
+    border-radius: 6px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    padding: 10px 0;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+      margin-bottom: 16px; 
+}
+
+    .combo-item:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+        opacity: 0.95;
+    }
+
+    /* ------- ẢNH COMBO ------- */
+    .combo-item img {
+        width: 95%;
+        border-radius: 6px;
+    }
+
+/* ------- BADGE GIẢM GIÁ ------- */
+.discount-badge {
+    position: absolute;
+    top: 50px;
+    right: 5px;
+    background: red;
+    color: white;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 50px;
+    transform: rotate(15deg);
+}
+
+/* ------- GIÁ TRÊN ẢNH ------- */
+.price-overlay {
+    position: absolute;
+    bottom: 18px;
+    left: 5px;
+    right: 5px;
+    background: #3a6e00;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 6px 0;
+    border-radius: 4px;
+}
+
+    .price-overlay .old-price {
+        text-decoration: line-through;
+        font-size: 14px;
+        color: #FFC107;
+        margin-right: 10px;
+    }
+
+/* ------- TIÊU ĐỀ COMBO ------- */
+.combo-title {
+    font-size: 15px;
+    font-weight: bold;
+    color: #d32f2f;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.resort-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+
+.guide-item {
+    width: 220px;
+    text-align: center;
+    border-radius: 6px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    padding: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+    .guide-item:hover {
+        transform: translateY(-5px);
+    }
+
+    .guide-item img {
+        width: 100%;
+        border-radius: 6px;
+    }
+
+/* ------- MEDIA QUERIES CHO ĐA NỀN TẢNG ------- */
+@media (max-width: 1024px) {
+    .top-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+
+
+    .menu2, .menu3 {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu2, .menu3 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu2-btn, .menu3-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .tour-item {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 100%; /* Giữ sidebar luôn rộng 100% màn hình */
+        min-width: unset; /* Hủy giới hạn min-width */
+        max-width: unset; /* Hủy giới hạn max-width */
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%; /* Đảm bảo sidebar không bị méo */
+        padding: 12px; /* Giữ padding không thay đổi */
+        border-radius: 6px; /* Giữ bo góc */
+    }
+}
+
+
+/**/
+/* Cấu trúc chính: Resort bên trái, Sidebar bên phải */
+.main-content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    max-width: 71%;
+    margin: 30px auto;
+    gap: 30px;
+    width: fit-content;
+    max-width: 1311px;
+    min-width: 329px;
+}
+
+/* Bố cục resort */
+    .resort-container {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+}
+
+/* Khu vực từng resort */
+.resort-section {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    transition: transform 0.3s ease-in-out;
+}
+
+
+.resort-title, .resort-title1 {
+    position: relative;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background-color: #3a6e00;
+    padding: 10px 15px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px;
+    margin-bottom: 20px;
+
+}
+
+    .resort-title::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: #DFA974; /* Màu cam */
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+    }
+.resort-button {
+    display: block;
+    text-align: center;
+    background: #3a6e00;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px auto;
+    width: 80%;
+    transition: background 0.3s ease, transform 0.2s ease-in-out;
+}
+
+    .resort-button:hover {
+        background: #DFA974;
+        transform: scale(1.05);
+    }
+
+
+/* Nút chuyển danh sách */
+.prev-btn, .next-btn {
+    background: #3a6e00;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 50%;
+    transition: background 0.3s ease-in-out;
+}
+
+    .prev-btn:hover, .next-btn:hover {
+        background: #DFA974;
+    }
+
+/* Danh sách resort */
+.resort-list-container {
+    overflow: hidden;
+}
+
+.resort-list {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    scroll-behavior: smooth;
+}
+    .resort-list::-webkit-scrollbar {
+        height: 8px;
+    }
+
+    .resort-list::-webkit-scrollbar-thumb {
+        background: #3a6e00;
+        border-radius: 10px;
+    }
+
+        .resort-list::-webkit-scrollbar-thumb:hover {
+            background: #DFA974;
+        }
+
+/* Từng resort */
+.resort-item {
+    position: relative;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+    .resort-item:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+    .resort-item:active {
+        transform: scale(0.98);
+        transition: transform 0.1s ease-in-out;
+    }
+    .resort-item.selected {
+        border: 2px solid #DFA974;
+        box-shadow: 0 0 10px rgba(223, 169, 116, 0.8);
+    }
+
+
+/* Nhãn SALE */
+.sale-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: red;
+    color: white;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+/* Ảnh resort */
+.resort-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px 12px 0 0;
+}
+
+/* Tên resort */
+.resort-item h3 {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px;
+    color: #3a6e00;
+    text-align: center;
+
+}
+/* Giá resort */
+.resort-price {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: #3a6e00;
+    margin: 10px 0;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: gray;
+    margin-left: 5px;
+}
+
+/* Nút đặt phòng */
+.resort-button {
+    display: block;
+    text-align: center;
+    background: #3a6e00;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px auto;
+    width: 80%;
+    transition: background 0.3s ease;
+}
+
+    .resort-button:hover {
+        background: #DFA974;
+    }
+
+
+/* Sidebar (Cẩm nang du lịch) nằm bên phải */
+.sidebar2 {
+    flex: 1;
+    max-width: 317px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease-in-out;
+    margin-top: -8%;
+}
+
+/* Tiêu đề cẩm nang */
+.guide-title {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    background: #3a6e00;
+}
+
+/* Ảnh nổi bật */
+.featured {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.featured img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.featured img:hover {
+    transform: scale(1.05);
+}
+
+.featured-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* Danh sách cẩm nang */
+/* Danh sách cẩm nang */
+.guide-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+    /* Gạch ngang bên dưới toàn bộ danh sách */
+    .guide-list::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #3a6e00;
+        display: block;
+    }
+
+    /* Mỗi mục trong danh sách */
+    .guide-list li {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 10px;
+        padding: 10px;
+        border-radius: 8px;
+        transition: all 0.3s ease-in-out;
+        background-color: white;
+        border-bottom: 1px solid #ccc; /* Gạch ngang dưới mỗi mục */
+    }
+
+        .guide-list li:last-child {
+            border-bottom: none; /* Xóa gạch ngang của mục cuối cùng */
+        }
+
+        .guide-list li:hover {
+            background-color: #f4f4f4;
+        }
+
+    /* Ảnh trong danh sách */
+    .guide-list img {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+        border-radius: 6px;
+    }
+
+    /* Link cẩm nang */
+    .guide-list a {
+        text-decoration: none;
+        color: #333;
+        font-size: 14px;
+        font-weight: 500;
+        transition: color 0.3s ease;
+    }
+
+        .guide-list a:hover {
+            color: #3a6e00;
+        }
+
+
+@media screen and (max-width: 1200px) {
+    .main-content {
+        max-width: 100%; /* Giữ nguyên bố cục nhưng co giãn hợp lý */
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .main-content {
+        flex-direction: column; /* Xếp chồng thay vì ngang */
+        align-items: center;
+    }
+
+    .sidebar2 {
+        max-width: 100%;
+        margin-top: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .resort-item {
+        flex: 1 1 calc(50% - 10px); /* 2 cột trên màn nhỏ */
+    }
+
+    .resort-list {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .guide-list li {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .resort-item {
+        flex: 1 1 100%; /* 1 cột trên màn cực nhỏ */
+    }
+
+    .resort-title, .resort-title1 {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .resort-button {
+        width: 100%;
+    }
+
+    .sidebar2 {
+        padding: 10px;
+    }
+
+    .guide-list a {
+        font-size: 12px;
+    }
+}
+/*hotel*/
+/* Bố cục chính */
+.hotel-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 1211px; /* Giới hạn chiều rộng tối đa */
+    width: 100%;
+    min-width: 320px; /* Tránh thu nhỏ quá mức */
+    margin: 30px auto;
+}
+
+/* Mỗi khu vực danh sách khách sạn */
+.hotel-section {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    transition: transform 0.3s ease-in-out;
+    margin: 0 auto; /* Căn giữa khi thu nhỏ */
+    width: 81%;
+    margin-left: -54px;
+}
+
+/* Tiêu đề danh sách */
+.hotel-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background-color: #3a6e00;
+    padding: 10px 15px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+
+
+/* Nút chuyển danh sách */
+.prev-btn, .next-btn {
+    background: #3a6e00;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 50%;
+    transition: background 0.3s ease-in-out;
+}
+
+    .prev-btn:hover, .next-btn:hover {
+        background: #DFA974;
+    }
+
+/* Danh sách khách sạn */
+.hotel-list-container {
+    overflow: hidden;
+}
+
+.hotel-list {
+    display: flex;
+    flex-wrap: wrap; /* Giữ bố cục đẹp khi thu nhỏ */
+    justify-content: center;
+    gap: 20px;
+    padding-bottom: 10px;
+}
+
+    .hotel-list::-webkit-scrollbar {
+        height: 8px;
+    }
+
+    .hotel-list::-webkit-scrollbar-thumb {
+        background: #3a6e00;
+        border-radius: 10px;
+    }
+
+        .hotel-list::-webkit-scrollbar-thumb:hover {
+            background: #DFA974;
+        }
+
+/* Từng khách sạn */
+.hotel-item {
+    position: relative;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border: 1px solid #ddd;
+    padding-bottom: 10px;
+    min-width: 220px;
+    max-width: 300px;
+    flex: 1;
+}
+
+    .hotel-item:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .hotel-item:active {
+        transform: scale(0.98);
+        transition: transform 0.1s ease-in-out;
+    }
+
+    .hotel-item.selected {
+        border: 2px solid #DFA974;
+        box-shadow: 0 0 10px rgba(223, 169, 116, 0.8);
+    }
+
+/* Nhãn SALE */
+.sale-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: red;
+    color: white;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+/* Ảnh khách sạn */
+.hotel-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px 12px 0 0;
+}
+
+/* Tên khách sạn */
+.hotel-item h3 {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px;
+    color: #3a6e00;
+    text-align: center;
+}
+
+/* Giá khách sạn */
+.hotel-price {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: #3a6e00;
+    margin: 10px 0;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: gray;
+    margin-left: 5px;
+}
+
+/* Nút đặt phòng */
+.hotel-button {
+    display: block;
+    text-align: center;
+    background: #3a6e00;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px auto;
+    width: 80%;
+    transition: background 0.3s ease;
+}
+
+    .hotel-button:hover {
+        background: #DFA974;
+    }
+
+/* -------------------- */
+/* ✅ Responsive tối ưu */
+/* -------------------- */
+
+/* Tablet (768px trở xuống) */
+@media (max-width: 768px) {
+    .hotel-content {
+        width: 95%;
+    }
+
+    .hotel-title {
+        font-size: 16px;
+        padding: 8px;
+    }
+
+    .hotel-section {
+        width: 100%;
+        margin: 0;
+        padding: 15px;
+    }
+
+    .hotel-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hotel-item {
+        min-width: 90%;
+        max-width: 100%;
+    }
+}
+
+/* Điện thoại nhỏ (480px trở xuống) */
+@media (max-width: 480px) {
+    .hotel-title {
+        font-size: 14px;
+        padding: 6px;
+    }
+
+    .hotel-button {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .hotel-price {
+        font-size: 16px;
+    }
+
+    .hotel-item h3 {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .hotel-list {
+        gap: 10px;
+    }
+
+    .hotel-item {
+        width: 100%;
+        min-width: unset;
+    }
+}
+
+/* Laptop nhỏ (1024px trở xuống) */
+@media (max-width: 1024px) {
+    .hotel-content {
+        width: 95%;
+    }
+
+    .hotel-section {
+        width: 100%;
+        margin: 0;
+    }
+}

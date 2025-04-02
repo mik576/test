@@ -1,0 +1,574 @@
+﻿
+@{
+    ViewBag.Title = "trang chủ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<main>
+    <section class="carousel">
+        <div id="carouselExampleFade" class="carousel slide carousel-fade">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="~/assets/img/banner/banner1.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="~/assets/img/banner/banner2.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="~/assets/img/banner/banner3.jpg" class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+    <section>
+        <div class="menu-fin">
+            <div class="search-bar">
+                <!-- Nơi khởi hành -->
+                <div class="input-container">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <input type="text" id="departure" placeholder="Nơi khởi hành" onclick="toggleCityList()" readonly>
+                    <ul class="city-list" id="city-list">
+                        <li onclick="selectCity('Hà Nội')">Hà Nội</li>
+                        <li onclick="selectCity('TP. Hồ Chí Minh')">TP. Hồ Chí Minh</li>
+                        <li onclick="selectCity('Đà Nẵng')">Đà Nẵng</li>
+                        <li onclick="selectCity('Nha Trang')">Nha Trang</li>
+                        <li onclick="selectCity('Phú Quốc')">Phú Quốc</li>
+                    </ul>
+                </div>
+
+                <!-- Ngày đi -->
+                <div class="input-container">
+                    <i class="fas fa-calendar-alt"></i>
+                    <input type="date" id="date-picker" placeholder="ngày đi">
+                </div>
+
+                <!-- Số lượng khách -->
+                <div class="input-container">
+                    <i class="fas fa-user-friends"></i>
+                    <input type="text" id="guest-room-text" value="1 người lớn, 0 trẻ em, 1 phòng" readonly onclick="toggleGuestRoomPopup()">
+                    <div class="guest-room-popup" id="guest-room-popup">
+                        <div class="counter">
+                            <span>Người lớn</span>
+                            <button onclick="changeCount('adults', -1)">-</button>
+                            <span id="adults-count">1</span>
+                            <button onclick="changeCount('adults', 1)">+</button>
+                        </div>
+                        <div class="counter">
+                            <span>Trẻ em</span>
+                            <button onclick="changeCount('children', -1)">-</button>
+                            <span id="children-count">0</span>
+                            <button onclick="changeCount('children', 1)">+</button>
+                        </div>
+                        <div class="counter">
+                            <span>Phòng</span>
+                            <button onclick="changeCount('rooms', -1)">-</button>
+                            <span id="rooms-count">1</span>
+                            <button onclick="changeCount('rooms', 1)">+</button>
+                        </div>
+                        <button class="apply-btn" onclick="applySelection()">Xong</button>
+                    </div>
+                </div>
+
+                <!-- Nút tìm kiếm -->
+                <button class="search-button"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <section class="quangcao">
+        <div class="image-quangcao">
+            <img src="~/assets/img/dichvu/ngamcanh.jpg" alt="Hình ảnh 1">
+            <img src="~/assets/img/dichvu/congviennuoc.jpg" alt="Hình ảnh 2">
+        </div>
+    </section>
+
+    <!-- menu 2 -->
+
+    <section class="top-container">
+        <div class="top-section">
+            <!-- MENU (BÊN TRÁI) -->
+            <div class="menu-container">
+                <section class="menu2">
+                    <button class="menu2-btn active" data-target="resort">Top Resort Khuyến Mãi</button>
+                    <button class="menu2-btn" data-target="daily-tour">Tour Hàng Ngày</button>
+                    <button class="menu2-btn" data-target="team-building">Tour Đoàn - Team Building - Gala</button>
+                    <button class="menu2-btn" data-target="combo">Combo Du Lịch</button>
+                </section>
+
+                <!-- NỘI DUNG TƯƠNG ỨNG VỚI MENU -->
+                <section class="content2" id="resort">
+
+                    <div class="tour-list">
+                        <div class="tour-item">
+                            <div class="sale-badge">SALE</div>
+                            <img src="~/assets/img/dichvu/cam-ranh-bay.jpg" alt="Vinpearl Phú Quốc">
+                            <h3>VINPEARL Cam ranh RESORT</h3>
+                            <p class="price"><span class="old-price">3,500,000đ</span> <span class="new-price">2,990,000đ</span></p>
+                            <p><b>Nơi đến:</b> Phú Quốc</p>
+                            <button class="book-btn">ĐẶT NGAY</button>
+                        </div>
+                        <div class="tour-item">
+                            <div class="sale-badge">SALE</div>
+                            <img src="~/assets/img/dichvu/cam-ranh-bay.jpg" alt="Vinpearl Phú Quốc">
+                            <h3>VINPEARL PHÚ QUỐC RESORT</h3>
+                            <p class="price"><span class="old-price">3,500,000đ</span> <span class="new-price">2,990,000đ</span></p>
+                            <p><b>Nơi đến:</b> Phú Quốc</p>
+                            <button class="book-btn">ĐẶT NGAY</button>
+                        </div>
+                        <div class="tour-item">
+                            <div class="sale-badge">SALE</div>
+                            <img src="~/assets/img/dichvu/cam-ranh-bay.jpg" alt="Vinpearl Phú Quốc">
+                            <h3>VINPEARL PHÚ QUỐC RESORT</h3>
+                            <p class="price"><span class="old-price">3,500,000đ</span> <span class="new-price">2,990,000đ</span></p>
+                            <p><b>Nơi đến:</b> Phú Quốc</p>
+                            <button class="book-btn">ĐẶT NGAY</button>
+                        </div>
+                        <div class="tour-item">
+                            <div class="sale-badge">SALE</div>
+                            <img src="~/assets/img/dichvu/cam-ranh-bay.jpg" alt="Vinpearl Phú Quốc">
+                            <h3>VINPEARL PHÚ QUỐC RESORT</h3>
+                            <p class="price"><span class="old-price">3,500,000đ</span> <span class="new-price">2,990,000đ</span></p>
+                            <p><b>Nơi đến:</b> Phú Quốc</p>
+                            <button class="book-btn">ĐẶT NGAY</button>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content2" id="daily-tour" style="display: none;">
+
+                    <div class="tour-list">
+                        <div class="tour-item">
+                            <img src="~/assets/img/dichvu/cam-ranh-bay.jpg" alt="Tour Đà Nẵng">
+                            <h3>KHÁM PHÁ ĐÀ NẴNG 1 NGÀY</h3>
+                            <p class="price"><span class="old-price">1,200,000đ</span> <span class="new-price">990,000đ</span></p>
+                            <p><b>Lịch trình:</b> Bà Nà Hills - Cầu Rồng - Biển Mỹ Khê</p>
+                            <button class="book-btn">ĐẶT NGAY</button>
+                        </div>
+                        <div class="tour-item">
+                            <img src="~/assets/img/dichvu/cam-ranh-bay.jpg" alt="Tour Nha Trang">
+                            <h3>KHÁM PHÁ NHA TRANG 1 NGÀY</h3>
+                            <p class="price"><span class="old-price">1,500,000đ</span> <span class="new-price">1,250,000đ</span></p>
+                            <p><b>Lịch trình:</b> VinWonders - Bãi Dài - Chợ Đầm</p>
+                            <button class="book-btn">ĐẶT NGAY</button>
+                        </div>
+                        <div class="tour-item">
+                            <img src="~/assets/img/dichvu/cam-ranh-bay.jpg" alt="Tour Nha Trang">
+                            <h3>KHÁM PHÁ NHA TRANG 1 NGÀY</h3>
+                            <p class="price"><span class="old-price">1,500,000đ</span> <span class="new-price">1,250,000đ</span></p>
+                            <p><b>Lịch trình:</b> VinWonders - Bãi Dài - Chợ Đầm</p>
+                            <button class="book-btn">ĐẶT NGAY</button>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content2" id="team-building" style="display: none;">
+
+                    <div class="tour-list">
+                        <div class="tour-item">
+                            <img src="~/assets/img/dichvu/cam-ranh-bay.jpg" alt="Team Building Vũng Tàu">
+                            <h3>TEAM BUILDING VŨNG TÀU</h3>
+                            <p class="price"><span class="old-price">3,000,000đ</span> <span class="new-price">2,600,000đ</span></p>
+                            <p><b>Lịch trình:</b> Bãi Sau - Hải Đăng - Tiệc Gala Dinner</p>
+                            <button class="book-btn">ĐẶT NGAY</button>
+                        </div>
+                        <div class="tour-item">
+                            <img src="~/assets/img/dichvu/cam-ranh-bay.jpg" alt="Team Building Đà Lạt">
+                            <h3>TEAM BUILDING ĐÀ LẠT</h3>
+                            <p class="price"><span class="old-price">3,500,000đ</span> <span class="new-price">2,900,000đ</span></p>
+                            <p><b>Lịch trình:</b> Đồi Mộng Mơ - Thiền Viện Trúc Lâm - Gala Dinner</p>
+                            <button class="book-btn">ĐẶT NGAY</button>
+                        </div>
+                        <div class="tour-item">
+                            <img src="~/assets/img/dichvu/cam-ranh-bay.jpg" alt="Team Building Đà Lạt">
+                            <h3>TEAM BUILDING ĐÀ LẠT</h3>
+                            <p class="price"><span class="old-price">3,500,000đ</span> <span class="new-price">2,900,000đ</span></p>
+                            <p><b>Lịch trình:</b> Đồi Mộng Mơ - Thiền Viện Trúc Lâm - Gala Dinner</p>
+                            <button class="book-btn">ĐẶT NGAY</button>
+                        </div>
+                    </div>
+                </section>
+
+
+                <section class="content2" id="combo" style="display: none;">
+
+                    <div class="tour-list">
+                        <div class="tour-item">
+                            <img src="~/assets/img/dichvu/cam-ranh-bay.jpg" alt="Combo Phú Quốc">
+                            <h3>COMBO DU LỊCH PHÚ QUỐC 3N2Đ</h3>
+                            <p class="price"><span class="old-price">5,000,000đ</span> <span class="new-price">4,500,000đ</span></p>
+                            <p><b>Gồm:</b> Vé máy bay + Khách sạn + Ăn sáng</p>
+                            <button class="book-btn">ĐẶT NGAY</button>
+                        </div>
+                        <div class="tour-item">
+                            <img src="~/assets/img/dichvu/cam-ranh-bay.jpg" alt="Combo Đà Nẵng">
+                            <h3>COMBO DU LỊCH ĐÀ NẴNG 4N3Đ</h3>
+                            <p class="price"><span class="old-price">6,500,000đ</span> <span class="new-price">5,900,000đ</span></p>
+                            <p><b>Gồm:</b> Vé máy bay + Khách sạn 4 sao + Buffet sáng</p>
+                            <button class="book-btn">ĐẶT NGAY</button>
+                        </div>
+                        <div class="tour-item">
+                            <img src="~/assets/img/dichvu/cam-ranh-bay.jpg" alt="Combo Đà Nẵng">
+                            <h3>COMBO DU LỊCH ĐÀ NẴNG 4N3Đ</h3>
+                            <p class="price"><span class="old-price">6,500,000đ</span> <span class="new-price">5,900,000đ</span></p>
+                            <p><b>Gồm:</b> Vé máy bay + Khách sạn 4 sao + Buffet sáng</p>
+                            <button class="book-btn">ĐẶT NGAY</button>
+                        </div>
+                    </div>
+                </section>
+
+
+                <section class="menu3">
+                    <button class="menu3-btn active" data-target="phuyen">tour du lịch vào ngày lễ </button>
+                    <button class="menu3-btn" data-target="Danang">tour trong nước</button>
+                    <button class="menu3-btn" data-target="ninhthuan">tour ngoài nước</button>
+
+                </section>
+
+                <!-- NỘI DUNG TƯƠNG ỨNG VỚI MENU -->
+                <section class="content" id="phuyen">
+
+                    <div class="tour-list">
+                        <div class="tour-item">
+                            <div class="sale-badge">SALE</div>
+                            <img src="~/assets/img/dichvu/cam-ranh-bay.jpg" alt="Vinpearl Phú Quốc">
+                            <h3>VINPEARL Cam ranh RESORT</h3>
+                            <p class="price"><span class="old-price">3,500,000đ</span> <span class="new-price">2,990,000đ</span></p>
+                            <p><b>Nơi đến:</b> Phú Quốc</p>
+                            <button class="book-btn">ĐẶT NGAY</button>
+                        </div>
+                        <div class="tour-item">
+                            <div class="sale-badge">SALE</div>
+                            <img src="~/assets/img/dichvu/cam-ranh-bay.jpg" alt="Vinpearl Phú Quốc">
+                            <h3>VINPEARL PHÚ QUỐC RESORT</h3>
+                            <p class="price"><span class="old-price">3,500,000đ</span> <span class="new-price">2,990,000đ</span></p>
+                            <p><b>Nơi đến:</b> Phú Quốc</p>
+                            <button class="book-btn">ĐẶT NGAY</button>
+                        </div>
+                        <div class="tour-item">
+                            <div class="sale-badge">SALE</div>
+                            <img src="~/assets/img/dichvu/cam-ranh-bay.jpg" alt="Vinpearl Phú Quốc">
+                            <h3>VINPEARL PHÚ QUỐC RESORT</h3>
+                            <p class="price"><span class="old-price">3,500,000đ</span> <span class="new-price">2,990,000đ</span></p>
+                            <p><b>Nơi đến:</b> Phú Quốc</p>
+                            <button class="book-btn">ĐẶT NGAY</button>
+                        </div>
+                        <div class="tour-item">
+                            <div class="sale-badge">SALE</div>
+                            <img src="~/assets/img/dichvu/cam-ranh-bay.jpg" alt="Vinpearl Phú Quốc">
+                            <h3>VINPEARL PHÚ QUỐC RESORT</h3>
+                            <p class="price"><span class="old-price">3,500,000đ</span> <span class="new-price">2,990,000đ</span></p>
+                            <p><b>Nơi đến:</b> Phú Quốc</p>
+                            <button class="book-btn">ĐẶT NGAY</button>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content" id="Danang" style="display: none;">
+
+                    <div class="tour-list">
+                        <div class="tour-item">
+                            <img src="~/assets/img/dichvu/cam-ranh-bay.jpg" alt="Tour Đà Nẵng">
+                            <h3>KHÁM PHÁ ĐÀ NẴNG 1 NGÀY</h3>
+                            <p class="price"><span class="old-price">1,200,000đ</span> <span class="new-price">990,000đ</span></p>
+                            <p><b>Lịch trình:</b> Bà Nà Hills - Cầu Rồng - Biển Mỹ Khê</p>
+                            <button class="book-btn">ĐẶT NGAY</button>
+                        </div>
+                        <div class="tour-item">
+                            <img src="~/assets/img/dichvu/cam-ranh-bay.jpg" alt="Tour Nha Trang">
+                            <h3>KHÁM PHÁ NHA TRANG 1 NGÀY</h3>
+                            <p class="price"><span class="old-price">1,500,000đ</span> <span class="new-price">1,250,000đ</span></p>
+                            <p><b>Lịch trình:</b> VinWonders - Bãi Dài - Chợ Đầm</p>
+                            <button class="book-btn">ĐẶT NGAY</button>
+                        </div>
+                        <div class="tour-item">
+                            <img src="img/dichvu/cam-ranh-bay.jpg" alt="Tour Nha Trang">
+                            <h3>KHÁM PHÁ NHA TRANG 1 NGÀY</h3>
+                            <p class="price"><span class="old-price">1,500,000đ</span> <span class="new-price">1,250,000đ</span></p>
+                            <p><b>Lịch trình:</b> VinWonders - Bãi Dài - Chợ Đầm</p>
+                            <button class="book-btn">ĐẶT NGAY</button>
+                        </div>
+
+                    </div>
+                </section>
+
+                <section class="content" id="ninhthuan" style="display: none;">
+
+                    <div class="tour-list">
+                        <div class="tour-item">
+                            <img src="~/assets/img/dichvu/cam-ranh-bay.jpg" alt="Team Building Vũng Tàu">
+                            <h3>TEAM BUILDING VŨNG TÀU</h3>
+                            <p class="price"><span class="old-price">3,000,000đ</span> <span class="new-price">2,600,000đ</span></p>
+                            <p><b>Lịch trình:</b> Bãi Sau - Hải Đăng - Tiệc Gala Dinner</p>
+                            <button class="book-btn">ĐẶT NGAY</button>
+                        </div>
+                        <div class="tour-item">
+                            <img src="~/assets/img/dichvu/cam-ranh-bay.jpg" alt="Team Building Đà Lạt">
+                            <h3>TEAM BUILDING ĐÀ LẠT</h3>
+                            <p class="price"><span class="old-price">3,500,000đ</span> <span class="new-price">2,900,000đ</span></p>
+                            <p><b>Lịch trình:</b> Đồi Mộng Mơ - Thiền Viện Trúc Lâm - Gala Dinner</p>
+                            <button class="book-btn">ĐẶT NGAY</button>
+                        </div>
+                        <div class="tour-item">
+                            <img src="~/assets/img/dichvu/cam-ranh-bay.jpg" alt="Team Building Đà Lạt">
+                            <h3>TEAM BUILDING ĐÀ LẠT</h3>
+                            <p class="price"><span class="old-price">3,500,000đ</span> <span class="new-price">2,900,000đ</span></p>
+                            <p><b>Lịch trình:</b> Đồi Mộng Mơ - Thiền Viện Trúc Lâm - Gala Dinner</p>
+                            <button class="book-btn">ĐẶT NGAY</button>
+                        </div>
+                    </div>
+                </section>
+
+
+            </div>
+
+            <!-- COMBO (BÊN PHẢI) -->
+            <aside class="sidebar">
+                <h2 class="sidebar-title">COMBO KHUYẾN MÃI</h2>
+                <a href="#" class="combo-item">
+                    <div class="combo-title">Cam Ranh Riviera Beach Resort & Spa</div>
+                    <div class="discount-badge">Giảm 10%</div>
+                    <img src="~/assets/img/dichvu/cam-ranh-bay.jpg" alt="Cam Ranh Riviera Beach Resort & Spa">
+                    <div class="price-overlay">
+                        <span class="old-price">2,700,000đ</span>
+                        <span class="new-price">2,440,000đ</span>
+                    </div>
+                </a>
+                <a href="#" class="combo-item">
+                    <div class="combo-title">Cam Ranh Riviera Beach Resort & Spa</div>
+                    <div class="discount-badge">Giảm 10%</div>
+                    <img src="~/assets/img/dichvu/cam-ranh-bay.jpg" alt="Cam Ranh Riviera Beach Resort & Spa">
+                    <div class="price-overlay">
+                        <span class="old-price">2,700,000đ</span>
+                        <span class="new-price">2,440,000đ</span>
+                    </div>
+                </a>
+                <a href="#" class="combo-item">
+                    <div class="combo-title">Cam Ranh Riviera Beach Resort & Spa</div>
+                    <div class="discount-badge">Giảm 10%</div>
+                    <img src="~/assets/img/dichvu/cam-ranh-bay.jpg" alt="Cam Ranh Riviera Beach Resort & Spa">
+                    <div class="price-overlay">
+                        <span class="old-price">2,700,000đ</span>
+                        <span class="new-price">2,440,000đ</span>
+                    </div>
+                </a>
+            </aside>
+        </div>
+    </section>
+
+
+    <section>
+        <div class="main-content">
+            <!-- Resort bên trái -->
+            <div class="resort-container">
+                <!-- Khu vực resort Nha Trang -->
+                <div class="resort-section">
+                    <div class="resort-title">
+                        <button class="prev-btn">&#10094;</button>
+                        RESORT NỔI TIẾNG TẠI NHA TRANG
+                        <button class="next-btn">&#10095;</button>
+                    </div>
+                    <div class="resort-list-container">
+                        <div class="resort-list">
+                            <div class="resort-item">
+                                <span class="sale-badge">SALE</span>
+                                <img src="~/assets/img/dichvu/cam-ranh-bay.jpg" alt="Resort 1">
+                                <h3>Amiana Resort Nha Trang</h3>
+                                <p class="resort-price">2,300,000đ <span class="old-price">2,600,000đ</span></p>
+                                <a href="#" class="resort-button">ĐẶT NGAY</a>
+                            </div>
+                            <div class="resort-item">
+                                <span class="sale-badge">SALE</span>
+                                <img src="~/assets/img/dichvu/cam-ranh-bay.jpg" alt="Resort 2">
+                                <h3>An Lâm Retreats Ninh Vân Bay</h3>
+                                <p class="resort-price">5,900,000đ <span class="old-price">6,500,000đ</span></p>
+                                <a href="#" class="resort-button">XEM CHI TIẾT</a>
+                            </div>
+                            <div class="resort-item">
+                                <span class="sale-badge">SALE</span>
+                                <img src="~/assets/img/dichvu/cam-ranh-bay.jpg" alt="Resort 2">
+                                <h3>An Lâm Retreats Ninh Vân Bay</h3>
+                                <p class="resort-price">5,900,000đ <span class="old-price">6,500,000đ</span></p>
+                                <a href="#" class="resort-button">XEM CHI TIẾT</a>
+
+                            </div>
+                            <div class="resort-item">
+                                <span class="sale-badge">SALE</span>
+                                <img src="~/assets/img/dichvu/cam-ranh-bay.jpg" alt="Resort 2">
+                                <h3>An Lâm Retreats Ninh Vân Bay</h3>
+                                <p class="resort-price">5,900,000đ <span class="old-price">6,500,000đ</span></p>
+                                <a href="#" class="resort-button">XEM CHI TIẾT</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Khu vực resort Phan Thiết -->
+                <div class="resort-section">
+                    <div class="resort-title1">
+                        <button class="prev-btn">&#10094;</button>
+                        RESORT NỔI TIẾNG TẠI PHAN THIẾT
+                        <button class="next-btn">&#10095;</button>
+                    </div>
+                    <div class="resort-list-container">
+                        <div class="resort-list">
+                            <div class="resort-item">
+                                <span class="sale-badge">SALE</span>
+                                <img src="~/assets/img/dichvu/cam-ranh-bay.jpg" alt="Resort Phan Thiết 1">
+                                <h3>Sea Links Beach Resort</h3>
+                                <p class="resort-price">3,200,000đ <span class="old-price">3,800,000đ</span></p>
+                                <a href="#" class="resort-button">ĐẶT NGAY</a>
+                            </div>
+                            <div class="resort-item">
+                                <span class="sale-badge">SALE</span>
+                                <img src="~/assets/img/dichvu/cam-ranh-bay.jpg" alt="Resort Phan Thiết 2">
+                                <h3>The Cliff Resort & Residences</h3>
+                                <p class="resort-price">4,500,000đ <span class="old-price">5,200,000đ</span></p>
+                                <a href="#" class="resort-button">XEM CHI TIẾT</a>
+                            </div>
+                            <div class="resort-item">
+                                <span class="sale-badge">SALE</span>
+                                <img src="~/assets/img/dichvu/cam-ranh-bay.jpg" alt="Resort Phan Thiết 2">
+                                <h3>The Cliff Resort & Residences</h3>
+                                <p class="resort-price">4,500,000đ <span class="old-price">5,200,000đ</span></p>
+                                <a href="#" class="resort-button">XEM CHI TIẾT</a>
+                            </div>
+                            <div class="resort-item">
+                                <span class="sale-badge">SALE</span>
+                                <img src="~/assets/img/dichvu/cam-ranh-bay.jpg" alt="Resort Phan Thiết 2">
+                                <h3>The Cliff Resort & Residences</h3>
+                                <p class="resort-price">4,500,000đ <span class="old-price">5,200,000đ</span></p>
+                                <a href="#" class="resort-button">XEM CHI TIẾT</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar - Cẩm nang du lịch (Bên phải) -->
+            <div class="sidebar2">
+                <div class="guide-title">Cẩm nang du lịch</div>
+                <div class="featured">
+                    <img src="~/assets/img/dichvu/cam-ranh-bay.jpg" alt="Hình ảnh nổi bật">
+                    <div class="featured-title">Khám phá Hàn Quốc mùa hoa anh đào</div>
+                </div>
+                <ul class="guide-list">
+                    <li>
+                        <img src="~/assets/img/dichvu/cam-ranh-bay.jpg" alt="">
+                        <a href="#">Đến Trung Quốc thì nên đi tham quan ở những đâu?</a>
+                    </li>
+                    <li>
+                        <img src="~/assets/img/dichvu/cam-ranh-bay.jpg" alt="">
+                        <a href="#">20 địa điểm du lịch tham quan nổi tiếng tại Bình Thuận</a>
+                    </li>
+                    <li>
+                        <img src="~/assets/img/dichvu/cam-ranh-bay.jpg" alt="">
+                        <a href="#">Cẩm nang du lịch Đà Nẵng - Huế - Hội An</a>
+                    </li>
+                    <li>
+                        <img src="~/assets/img/dichvu/cam-ranh-bay.jpg" alt="">
+                        <a href="#">Tour Nhật Bản ngắm lá vàng: Tokyo - Yamanashi</a>
+                    </li>
+                    <li>
+                        <img src="~/assets/img/dichvu/cam-ranh-bay.jpg" alt="">
+                        <a href="#">Du lịch Thái Lan - Lễ hội té nước</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="hotel-content">
+            <div class="hotel-section">
+                <div class="hotel-title">
+                    <button class="prev-btn">&#10094;</button>
+                    khách sạn NỔI TIẾNG
+                    <button class="next-btn">&#10095;</button>
+                </div>
+                <div class="hotel-list-container">
+                    <div class="hotel-list">
+                        <div class="hotel-item">
+                            <span class="sale-badge">SALE</span>
+                            <img src="~/assets/img/dichvu/cam-ranh-bay.jpg" alt="Resort 1">
+                            <h3>Amiana Resort Nha Trang</h3>
+                            <p class="hotel-price">2,300,000đ <span class="old-price">2,600,000đ</span></p>
+                            <a href="#" class="hotel-button">ĐẶT NGAY</a>
+                        </div>
+                        <div class="hotel-item">
+                            <span class="sale-badge">SALE</span>
+                            <img src="~/assets/img/dichvu/cam-ranh-bay.jpg" alt="Resort 1">
+                            <h3>Amiana Resort Nha Trang</h3>
+                            <p class="hotel-price">2,300,000đ <span class="old-price">2,600,000đ</span></p>
+                            <a href="#" class="hotel-button">ĐẶT NGAY</a>
+                        </div>
+                        <div class="hotel-item">
+                            <span class="sale-badge">SALE</span>
+                            <img src="~/assets/img/dichvu/cam-ranh-bay.jpg" alt="Resort 1">
+                            <h3>Amiana Resort Nha Trang</h3>
+                            <p class="hotel-price">2,300,000đ <span class="old-price">2,600,000đ</span></p>
+                            <a href="#" class="hotel-button">ĐẶT NGAY</a>
+                        </div>
+                        <div class="hotel-item">
+                            <span class="sale-badge">SALE</span>
+                            <img src="~/assets/img/dichvu/cam-ranh-bay.jpg" alt="Resort 1">
+                            <h3>Amiana Resort Nha Trang</h3>
+                            <p class="hotel-price">2,300,000đ <span class="old-price">2,600,000đ</span></p>
+                            <a href="#" class="hotel-button">ĐẶT NGAY</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hotel-section">
+                <div class="hotel-title">
+                    <button class="prev-btn">&#10094;</button>
+                    Khách sạn NỔI TIẾNG Nước ngoài
+                    <button class="next-btn">&#10095;</button>
+                </div>
+                <div class="hotel-list-container">
+                    <div class="hotel-list">
+                        <div class="hotel-item">
+                            <span class="sale-badge">SALE</span>
+                            <img src="~/assets/img/dichvu/cam-ranh-bay.jpg" alt="Resort 1">
+                            <h3>Amiana Resort Nha Trang</h3>
+                            <p class="hotel-price">2,300,000đ <span class="old-price">2,600,000đ</span></p>
+                            <a href="#" class="hotel-button">ĐẶT NGAY</a>
+                        </div>
+                        <div class="hotel-item">
+                            <span class="sale-badge">SALE</span>
+                            <img src="~/assets/img/dichvu/cam-ranh-bay.jpg" alt="Resort 1">
+                            <h3>Amiana Resort Nha Trang</h3>
+                            <p class="hotel-price">2,300,000đ <span class="old-price">2,600,000đ</span></p>
+                            <a href="#" class="hotel-button">ĐẶT NGAY</a>
+                        </div>
+                        <div class="hotel-item">
+                            <span class="sale-badge">SALE</span>
+                            <img src="~/assets/img/dichvu/cam-ranh-bay.jpg" alt="Resort 1">
+                            <h3>Amiana Resort Nha Trang</h3>
+                            <p class="hotel-price">2,300,000đ <span class="old-price">2,600,000đ</span></p>
+                            <a href="#" class="hotel-button">ĐẶT NGAY</a>
+                        </div>
+                        <div class="hotel-item">
+                            <span class="sale-badge">SALE</span>
+                            <img src="~/assets/img/dichvu/cam-ranh-bay.jpg" alt="Resort 1">
+                            <h3>Amiana Resort Nha Trang</h3>
+                            <p class="hotel-price">2,300,000đ <span class="old-price">2,600,000đ</span></p>
+                            <a href="#" class="hotel-button">ĐẶT NGAY</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+</main>
+

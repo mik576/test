@@ -1,0 +1,373 @@
+﻿body {
+    font-family: Tahoma, sans-serif;
+}
+
+
+/* Định dạng tổng thể */
+.carousel {
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Ảnh trong carousel */
+.carousel-inner img {
+    height: 500px;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Nút điều hướng */
+.carousel-control-prev, .carousel-control-next {
+    width: 5%;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Hiển thị nút khi hover */
+.carousel:hover .carousel-control-prev,
+.carousel:hover .carousel-control-next {
+    opacity: 1;
+}
+
+/* Bo tròn và tạo màu nền cho nút */
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: #B4D800; /* Xanh chuối */
+    border-radius: 50%;
+    padding: 12px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Hiệu ứng khi hover */
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon {
+    background-color: #ffbf00; /* Màu xanh đậm hơn */
+    transform: scale(1.1); /* Hiệu ứng phóng to nhẹ */
+}
+
+.menu-fin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    margin: 20px auto;
+}
+
+    .menu-fin .header {
+        margin-bottom: 15px;
+    }
+
+    .menu-fin h1 {
+        font-size: 24px;
+        font-weight: bold;
+        color: #000;
+    }
+
+    .menu-fin .description {
+        font-size: 16px;
+        color: #666;
+    }
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 50px;
+    padding: 8px 15px;
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    box-shadow: 0px 4px 10px rgba(3,18,26,0.15);
+}
+
+.input-container {
+    position: relative;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 8px 15px;
+    border-radius: 50px;
+    background: #fff;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    margin: 0 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+    .input-container:hover {
+        border-color: #7ac142;
+    }
+
+    .input-container i {
+        margin-right: 8px;
+        color: #7ac142;
+        font-size: 18px;
+    }
+
+    .input-container input[type="text"] {
+        flex: 1;
+        border: none;
+        outline: none;
+        padding: 10px;
+        font-size: 14px;
+        width: 100%;
+        background: transparent;
+    }
+
+.city-list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 10px 0;
+    z-index: 100;
+    list-style: none;
+}
+
+    .city-list li {
+        padding: 10px 15px;
+        cursor: pointer;
+        transition: background 0.3s ease-in-out;
+    }
+
+        .city-list li:hover {
+            background: #7ac142;
+            color: white;
+        }
+
+.guest-room-popup {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    width: 280px;
+    z-index: 100;
+}
+
+.counter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+}
+
+    .counter button {
+        width: 32px;
+        height: 32px;
+        border: none;
+        background: #ddd;
+        cursor: pointer;
+        border-radius: 6px;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+.apply-btn {
+    width: 100%;
+    background: #7ac142;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+}
+
+    .apply-btn:hover {
+        background: #5e9b31;
+    }
+
+.search-button {
+    background: #7ac142;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .search-button:hover {
+        background: #ffbf00;
+    }
+
+@media (max-width: 768px) {
+    .menu-fin {
+        padding: 15px;
+        max-width: 100%;
+        margin: 10px auto;
+    }
+
+    .search-bar {
+        flex-direction: column;
+        padding: 10px;
+        width: 95%;
+    }
+
+    .search-container {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+        .search-container input {
+            font-size: 14px;
+            padding: 8px;
+        }
+
+    .search-button {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    .guest-room-popup {
+        width: 90%;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+
+/*main*/
+.hotel-section {
+    padding: 30px 0;
+}
+
+.hotel-item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+    .hotel-item:hover {
+        background-color: #f8f9fa;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+.hotel-img {
+    width: 176px;
+    height: 191px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.hotel-info {
+    flex-grow: 1;
+}
+
+.price-box {
+    min-width: 160px;
+}
+
+.price {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #D9534F;
+}
+
+.filter-box {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.support-img {
+    max-width: 88px;
+    height: 87px;
+    border-radius: 50%;
+    min-width: 85px;
+}
+.hotel-header a , h4 {
+    text-decoration: none; /* Xóa gạch dưới */
+    color: #198759; /* Màu mặc định (xanh dương) */
+    transition: color 0.3s ease-in-out; /* Hiệu ứng đổi màu */
+}
+
+    .hotel-header a:hover {
+        color: #DFA974; /* Màu khi hover (màu vàng cam theo chủ đạo của bạn) */
+    }
+
+.hotel-link {
+    text-decoration: none; /* Xóa gạch chân */
+    color: inherit; /* Giữ nguyên màu chữ */
+    display: block; /* Để toàn bộ div trở thành vùng click */
+}
+
+.hotel-item {
+    transition: transform 0.2s ease-in-out; /* Hiệu ứng hover */
+}
+
+    .hotel-item:hover {
+        transform: scale(1.02); /* Phóng to nhẹ khi hover */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Hiệu ứng bóng */
+    }
+
+a {
+    text-decoration: none;
+}
+.hotel-name {
+    color: #28a745; /* Màu xanh lá */
+}
+
+.hotel-rating {
+    color: #6c757d; /* Màu xám */
+}
+
+.hotel-review {
+    color: #d23200; /* Màu xanh dương */
+}
+
+.hotel-review-count {
+    color: #6c757d; /* Màu xám nhạt */
+}
+
+.hotel-location {
+    color: #28a745; /* Màu xanh lá */
+}
+
+.hotel-map-link {
+    color: #dc3545; /* Màu đỏ */
+    text-decoration: none; /* Xóa gạch chân */
+}
+
+.hotel-feature {
+    background-color: #ffc107; /* Màu vàng */
+    color: #000; /* Chữ đen */
+}
+
+.hotel-service {
+    background-color: #ff9800; /* Màu xanh dương */
+    color: white;
+}
+
+.hotel-price {
+    color: #dc3545; /* Màu đỏ */
+}
+
+
+.hotel-book-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    transition: background-color 0.3s ease-in-out;
+}
+
+    .hotel-book-btn:hover {
+        background-color: #ffc107;
+    }

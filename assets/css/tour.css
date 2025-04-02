@@ -1,0 +1,67 @@
+﻿.section-title {
+    font-size: 24px;
+    color: #CC6B2D;
+}
+
+.section-subtitle {
+    color: #555;
+}
+
+.card {
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    min-height: 100%; /* Giúp tất cả thẻ card có cùng chiều cao */
+    display: flex;
+    flex-direction: column;
+}
+
+    .card:hover {
+        transform: translateY(-5px);
+    }
+
+.card-img-top {
+    height: 180px;
+    object-fit: cover;
+}
+
+.deal-tag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.deal-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Giúp phần nội dung mở rộng để đẩy giá xuống dưới */
+}
+
+    .deal-info ul {
+        padding-left: 15px;
+    }
+
+.deal-price {
+    font-size: 18px;
+    margin-top: auto; /* Đẩy giá xuống dưới */
+}
+
+.deal-sold {
+    margin-bottom: 10px;
+}
+
+.tiencich {
+    color: #3a6e00; /* Màu xanh chuối */
+}
+
+    .tiencich li {
+        margin-bottom: 5px; /* Khoảng cách giữa các mục */
+    }
+
+.highlighted-deals-menu {
+    background-color: #fff3e0; /* Màu nền nhạt */
+    padding: 50px 0; /* Khoảng cách trên dưới */
+    border-radius: 10px; /* Bo góc */
+}

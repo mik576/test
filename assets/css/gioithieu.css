@@ -1,0 +1,67 @@
+﻿/* Bố cục chính */
+.container {
+    max-width: 1149px;
+    margin-bottom: 22px;
+}
+
+/* Sidebar (menu trái) */
+.sidebar {
+    min-height: 100%;
+}
+
+    .sidebar .list-group-item {
+        border: none;
+        padding: 12px 15px;
+    }
+
+        .sidebar .list-group-item a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            display: block;
+        }
+
+        .sidebar .list-group-item:hover {
+            background-color: #ff8000;
+            color: white;
+        }
+
+        .sidebar .list-group-item.active {
+            background-color: #ff8000;
+            color: white;
+            border-left: 4px solid #DFA974;
+        }
+
+/* Nội dung chính */
+.content {
+    background: white;
+    border-radius: 8px;
+}
+
+    .content h1 {
+        color: #222;
+        font-size: 28px;
+    }
+
+    .content p {
+        line-height: 1.6;
+        color: #555;
+    }
+
+    .content a {
+        color: #ff8000;
+        text-decoration: none;
+    }
+
+        .content a:hover {
+            text-decoration: underline;
+        }
+
+.fade {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+    .fade.show {
+        opacity: 1;
+    }
